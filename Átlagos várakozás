@@ -1,0 +1,9 @@
+Egy forgalmas benzinkútnál a tapasztalatok szerint a sorbanállás pillanatától a tankolás megkezdéséig eltelt percek száma exponenciális eloszlású. 
+Tudjuk, hogy átlagosan 2 percet kell várni. 
+Egy barátom felhív a sorbanállásom kezdetekor, és azt mondja 5 perc múlva odajön. 
+(feltesszük hogy valóban megérkezik a mondott időre). Annak a valsége hogy még sorbanállok a megérkezésekor: 
+
+lambda = 1/2;
+t = 5;
+P = exp(-lambda * t);
+fprintf('%.6f\n', P)
