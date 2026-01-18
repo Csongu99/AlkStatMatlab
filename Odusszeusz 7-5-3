@@ -1,0 +1,26 @@
+Vándorlásai közben Odüsszeusz egy hármas útelágazáshoz ér. Az egyik út Athénba, a másik Mükénébe, a harmadik Spártába vezet. Az athéniak kereskedő népség, 
+szeretik ámítani a látogatókat, ők csak minden hetedik alkalommal mondanak igazat. 
+A mükénéiek egy fokkal jobbak: ők minden ötödik alkalommal mondanak igazat. 
+A szigorúbb spártai neveltetésnek köszönhetően a spártaiak minden harmadik alkalommal mondanak igazat. 
+Odüsszeusznak gőze sincs, melyik út merre vezet, így a három út közül egyenlő valószínűséggel választ.
+
+Megérkezve a városba, megkérdez egy embert: Mennyi 2-szer 2? Mire az közli vele, hogy 4. Mi a valószínűsége, hogy Odüsszeusz Athénba jutott?    
+
+P_Athen = 1/3;
+P_Mykene = 1/3;
+P_Sparta = 1/3;
+
+% Feltételes valószínűségek (P(Igazat mond | Város))
+P_Igaz_Athen = 1/7;
+P_Igaz_Mykene = 1/5;
+P_Igaz_Sparta = 1/3;
+
+% 1. Teljes valószínűség tétele: Mi a valószínűsége, hogy 4-et mondanak (igazat mondanak)?
+P_Negyet_Mond = (P_Athen * P_Igaz_Athen) + (P_Mykene * P_Igaz_Mykene) + (P_Sparta * P_Igaz_Sparta);
+
+% 2. Bayes-tétel: Mi a valószínűsége, hogy Athénban van, feltéve hogy igazat mondtak?
+P_Athen_Ha_Igaz = (P_Athen * P_Igaz_Athen) / P_Negyet_Mond;
+
+% Eredmények kiíratása 6 tizedesjegy pontossággal
+fprintf('Annak a valószínűsége, hogy a 4-es választ hallja: %.6f\n', P_Negyet_Mond);
+fprintf('Annak a valószínűsége, hogy Athénba jutott: %.6f\n', P_Athen_Ha_Igaz);
