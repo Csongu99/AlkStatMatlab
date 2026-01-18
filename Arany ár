@@ -1,0 +1,22 @@
+Hat tizedes pontosággal add meg az eredményt. 
+Úgy hogy megadod a matlab kódját. 
+Egy részvény kiinduló ára 100 arany. Egy év múlva, egyforma valószínűséggel -20, 10 vagy 0 százalékkal változik az ára. 
+A következő évben ugyanez történik, az előző évi változástól függetlenül. 
+Mennyi 2 év múlva a részvényár várható értéke?  
+
+% Kezdőár
+S0 = 100;
+
+% Lehetséges hozamok (százalékos változások)
+hozamok = [-0.20, 0.10, 0.00];
+
+% Valószínűségek (mivel egyforma valószínűségűek)
+p = 1/3;
+
+% Várható érték kiszámítása 2 év múlva
+% E[S2] = S0 * (E[1 + r])^2
+E_1plusR = sum((1 + hozamok) .* p);
+E_S2 = S0 * (E_1plusR)^2;
+
+% Eredmény kiíratása 6 tizedes pontossággal
+fprintf('%.6f\n', E_S2);
