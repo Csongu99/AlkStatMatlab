@@ -1,0 +1,50 @@
+Egy zacskós tea-féle névleges (átlagos) tömege a gyártó állítása szerint 190 gramm. 
+A fogyasztóvédelem emberei véletlenszerűen megvizsgáltak néhány terméket ( 𝑋1,...,𝑋8 ) és a következő eredményeket kapták:
+
+∑8𝑘=1𝑋𝑘=1520.8888∑8𝑘=1𝑋2𝑘=289145.1884
+A töltőtömeg normalitását feltételezve a minta alapján a gyártó állítását 𝛼=0.01 szinten
+
+    nincs okunk elvetni.
+    elvetjük.
+
+A helyes válasz:
+    nincs okunk elvetni.
+.
+A döntéshez használt próba-statisztika értéke:    
+
+A döntéshez használt intervallum jobb végpontja:     
+
+A 𝑝-érték:    
+
+Mindenütt legalább 6 jegy pontossággal adja meg a válaszokat!
+
+ % Adatok
+n = 8;
+sumX = 1520.8888;
+sumX2 = 289145.1884;
+mu0 = 190;
+alpha = 0.01;
+
+% Átlag és korrigált tapasztalati szórás számítása
+x_bar = sumX / n;
+s = sqrt((sumX2 - n * x_bar^2) / (n - 1));
+
+% Próbastatisztika (egymintás t-statisztika)
+t_ertek = (x_bar - mu0) / (s / sqrt(n));
+
+% Kritikus érték (kétoldali t-próba, df = n-1)
+t_krit = tinv(1 - alpha/2, n - 1);
+
+% p-érték
+p_ertek = 2 * (1 - tcdf(abs(t_ertek), n - 1));
+
+% Eredmények kiíratása 6 tizedes pontossággal
+fprintf('A döntéshez használt próba-statisztika értéke: %.6f\n', t_ertek);
+fprintf('A döntéshez használt intervallum jobb végpontja: %.6f\n', t_krit);
+fprintf('A p-érték: %.6f\n', p_ertek);
+
+if abs(t_ertek) <= t_krit
+    disp('A gyártó állítását nincs okunk elvetni.');
+else
+    disp('A gyártó állítását elvetjük.');
+end
