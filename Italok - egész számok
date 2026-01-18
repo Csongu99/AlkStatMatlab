@@ -1,0 +1,16 @@
+Van 11 üveg különböző italod. 
+Eldöntötted, hogy óránként megiszol egyet, összesen négyet. Hányféleképpen ihatsz? (tegyük fel, hogy sörre bor ≠ borra sör) 
+
+Miután végeztél a(z) 4 üveggel, barátod felhív - szülinapra invitál: Indulj azonnal, csak hozzál 3 üveg italt az ünnepeltnek! Hányféleképpen választhatod az ajándékot? 
+
+% Első rész: Variáció (sorrend számít)
+% n = 11, k = 4
+vallasztas_sorrenddel = nchoosek(11, 4) * factorial(4);
+
+% Második rész: Kombináció (sorrend nem számít)
+% A maradék 7 üvegből választunk 3-at
+ajandek_sorrend_nelkul = nchoosek(7, 3);
+
+% Eredmények megjelenítése 6 tizedes pontossággal
+fprintf('Ihatsz: %.6f féleképpen.\n', vallasztas_sorrenddel);
+fprintf('Ajándékot választhatsz: %.6f féleképpen.\n', ajandek_sorrend_nelkul);
