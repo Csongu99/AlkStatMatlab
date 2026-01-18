@@ -1,0 +1,20 @@
+Ezt jól kiszámolta a gemini a múltkor. Nem biztos hogy kell matlab
+Írj egy kódot matlabba ami kiszámolj ezt a feladatot. Hat tizedes pontosággal. Egy 𝑋 valségi változó sűrűségfüggvénye:  
+𝑓𝑋(𝑥)= 𝐴/4𝑥 a négyzeten ha 𝑥>6, 0 máskor 
+alakú valamely 𝐴 számmal. 
+
+Ekkor 𝐴= 
+     
+𝑃(8<𝑋≤87/4)=
+
+
+% A meghatározása: integral(A/(4*x^2), 6, inf) = 1
+A = 24;
+
+% P(8 < X <= 87/4) kiszámítása
+f = @(x) A ./ (4 * x.^2);
+prob = integral(f, 8, 87/4);
+
+% Kiíratás hat tizedesjegy pontossággal
+fprintf('A = %.6f\n', A);
+fprintf('P(8 < X <= 21.75) = %.6f\n', prob);
