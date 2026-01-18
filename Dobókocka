@@ -1,0 +1,32 @@
+Oldd meg a következő feladatot, úgy hogy megadod a matlab kódját. Hat tizedes pontosággal add meg az eredményt. Dobjunk fel egyszerre három szabályos dobókockát. 
+Mennyi annak a valószínűsége, hogy a dobott számok összege 14?      
+
+Mennyi a dobott számok összegének várható értéke?
+
+% Az összes lehetséges kimenetel száma (6^3)
+osszes_eset = 6^3;
+
+% 1. Valószínűség, hogy az összeg 14
+kedvezo_esetek = 0;
+osszegek = [];
+
+for d1 = 1:6
+    for d2 = 1:6
+        for d3 = 1:6
+            aktualis_osszeg = d1 + d2 + d3;
+            osszegek = [osszegek, aktualis_osszeg];
+            if aktualis_osszeg == 14
+                kedvezo_esetek = kedvezo_esetek + 1;
+            end
+        end
+    end
+end
+
+p_14 = kedvezo_esetek / osszes_eset;
+
+% 2. Várható érték kiszámítása
+varhato_ertek = mean(osszegek);
+
+% Eredmények kiíratása 6 tizedesjegy pontossággal
+fprintf('Annak a valószínűsége, hogy az összeg 14: %.6f\n', p_14);
+fprintf('A dobott számok összegének várható értéke: %.6f\n', varhato_ertek);
