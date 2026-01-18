@@ -1,0 +1,25 @@
+Tekintsük az 
+𝐴=[−52, −1, 52, 0, 32, 31, −10, −23, 48, 22]
+és 
+𝐵=[0, −1, 15, 10, −35, 38, 1, −53, 33, −28]
+és a 
+𝐶=[−45, −27, 8, 49, 52, 32, −11, 17, −43]
+vektorokat. Jelölje 𝑎, 𝑏 és 𝑐 rendre az 𝐴, 𝐵 és a 𝐶 véletlenszerűen választott elemeit. 
+Számoljuk ki a következő valségeket! 
+P(𝑎+𝑏+𝑐≥0)= 0.588889
+P(𝑎∗𝑏∗𝑐≥0)= 0.595556
+
+A = [-52, -1, 52, 0, 32, 31, -10, -23, 48, 22];
+B = [0, -1, 15, 10, -35, 38, 1, -53, 33, -28];
+C = [-45, -27, 8, 49, 52, 32, -11, 17, -43];
+
+[a, b, c] = ndgrid(A, B, C);
+
+osszeg_feltetel = (a + b + c >= 0);
+szorzat_feltetel = (a .* b .* c >= 0);
+
+p1 = mean(osszeg_feltetel(:));
+p2 = mean(szorzat_feltetel(:));
+
+fprintf('P(a+b+c>=0) = %.6f\n', p1);
+fprintf('P(a*b*c>=0) = %.6f\n', p2);
