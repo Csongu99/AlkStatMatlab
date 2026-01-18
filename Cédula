@@ -1,0 +1,25 @@
+Oldd meg a következő feladatot úgy hogy megadod a matlab kódját. Hat tizedes pontosággal írj ki az eredményeket. Egy dobozban 12 cédula van, rajtuk a 
+22, 13, 21, 31, 23, 33, 32, 21, 11, 22, 11, 32
+számokkal. Egy véletlenszerűen kihúzott cédula esetén jelentse 𝑋 az első, 𝑌 a második számjegyét. Számolja ki a hiányzó mennyiségeket!      
+E(𝑋)=
+
+E(𝑌)=
+
+cov(𝑋,𝑌)=
+    
+corr(𝑋,𝑌)=
+   
+
+data = [22, 13, 21, 31, 23, 33, 32, 21, 11, 22, 11, 32];
+X = floor(data / 10);
+Y = mod(data, 10);
+
+ex = mean(X);
+ey = mean(Y);
+cxy = mean((X - ex) .* (Y - ey));
+rxy = corr(X', Y');
+
+fprintf('E(X) = %.6f\n', ex);
+fprintf('E(Y) = %.6f\n', ey);
+fprintf('cov(X,Y) = %.6f\n', cxy);
+fprintf('corr(X,Y) = %.6f\n', rxy);
