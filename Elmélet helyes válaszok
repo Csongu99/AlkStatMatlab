@@ -1,23 +1,45 @@
-Ha 𝜉=𝑎𝜂+𝑏 valmilyen 𝑎,𝑏∈ℝ számokkal, akkor corr(𝜉,𝜂)=±1.
-
-Ha 𝐴1,...,𝐴𝑛 teljes eseményrendszer és P(𝐴𝑘)>0, 𝑘=1...𝑛, akkor minden 𝐵-re: P(𝐵)=∑𝑛𝑘=1P(𝐵|𝐴𝑘)P(𝐴𝑘)
-
-Egy 𝜉 valségi változó az 𝑥1,...,𝑥𝑛 értékeket veheti fel. Ekkor a szórásnégyzete: D2(𝜉)=E(𝜉2)−E(𝜉)2
-
-Bármely 𝜉-re és 𝑎-ra P(𝜉=𝑎)=0, feltéve hogy 𝜉 eloszlásfüggvénye folytonos.
+𝐴-nak a 𝐵-re (P(𝐵)>0) vonatkozó feltételes valsége P(𝐴|𝐵)=P(𝐴)P(𝐵), ha 𝐴 maga után vonja 𝐵-t.
 
 Bármely 𝜉-re és 𝑎<𝑏-re P(𝑎≤𝜉<𝑏)=𝐹𝜉(𝑏)−𝐹𝜉(𝑎).
 
-Egy 𝜉∼(𝑎,𝑏) szórásnégyzete: (𝑏−𝑎)212
+Bármely 𝜉-re és 𝑎-ra P(𝜉=𝑎)=0, feltéve hogy 𝜉 eloszlásfüggvénye folytonos.
 
-Ha 𝜉∼(𝜇,𝜎2) akkor 𝜉−𝜇𝜎∼(0,1).
+Egy 𝜉∼(𝑎,𝑏) szórásnégyzete: (𝑏−𝑎)212
 
 Egy 𝜉∼Binom(𝑛,𝑝) szórásnégyzete: 𝑛𝑝(1−𝑝)
 
-𝐴-nak a 𝐵-re (P(𝐵)>0) vonatkozó feltételes valsége P(𝐴|𝐵)=P(𝐴)P(𝐵), ha 𝐴 maga után vonja 𝐵-t.
+Egy 𝜉 valségi változó az 𝑥1,...,𝑥𝑛 értékeket veheti fel. Ekkor a szórásnégyzete: D2(𝜉)=E(𝜉2)−E(𝜉)2
+
+Ha 𝜉∼(𝜇,𝜎2) akkor 𝜉−𝜇𝜎∼(0,1).
+
+Ha corr(𝜉,𝜂)=±1 akkor 𝜉=𝑎𝜂+𝑏 valmilyen 𝑎,𝑏∈ℝ számokkal.
+
+Ha 𝜉=𝑎𝜂+𝑏 valmilyen 𝑎,𝑏∈ℝ számokkal, akkor corr(𝜉,𝜂)=±1.
 
 Ha a 𝜉 és 𝜂 valségi változóknak létezik a korrelációja, akkor −1≤corr(𝜉,𝜂)≤1.
-    
-Ha corr(𝜉,𝜂)=±1 akkor 𝜉=𝑎𝜂+𝑏 valmilyen 𝑎,𝑏∈ℝ számokkal.
-    
+
+Ha 𝐴1,...,𝐴𝑛 teljes eseményrendszer és P(𝐴𝑘)>0, 𝑘=1...𝑛, akkor minden 𝐵-re: P(𝐵)=∑𝑛𝑘=1P(𝐵|𝐴𝑘)P(𝐴𝑘)
+
 Minden valségi változónak van eloszlásfüggvénye.
+
+/////// Talán igazak:
+
+Azt mondjuk, hogy ξ∼Poisson(λ), ha P(ξ=k)=eλk!λk​ (k=0,1,2…) valamilyen λ>0 esetén.​
+
+A-nak a B-re vonatkozó feltételes valségét P(A∣B)=P(B)P(A⋅B)​ módon értelmezzük, feltéve hogy P(B)>0.
+
+Ha corr(ξ,η)=±1 akkor ξ=aη+b valamilyen a,b∈R számokkal.
+
+Ha P(A)=1 akkor A bekövetkezhet.
+
+Egy ξ∼U(a,b) várható értéke: 2a+b​
+
+Egy ξ∼U(a,b) szórásnégyzete: 12(b−a)2
+
+Egy ξ valségi változó az x1​,…,xn​ értékeket veheti fel. Ekkor a várható értéke: E(ξ)=∑k=1n​P(ξ=xk​)xk
+
+Egy ξ valségi változó az x1​,…,xn​ értékeket veheti fel. Ekkor a szórásnégyzete D2(ξ)=∑k=1n​P(ξ=xk​)(xk​−E(ξ))2
+
+Egy ξ valségi változó az x1​,…,xn​ értékeket veheti fel és pk​=P(ξ=xk​). Ekkor a második momentuma E(ξ2)=∑k=1n​xk2​pk​
+
+Véges értékkészletű valségi változók eloszlásfüggvénye lépcsős függvény.​
